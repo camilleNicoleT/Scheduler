@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +28,73 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+    <main class = "container">
+      <div class="col-12 row d-flex flex-column time-block">
+        <!---Time Blocks-->
+        <div class="col col-1 m-0">
+           <h3 class="hour"></h3>9am
+          </div>
+        <div class="col col-md-8">
+          <textarea class="description">nggjghtfhfxghx</textarea>
+        </div>
+        <div class="col col-2">
+          <button class="saveBtn p-3">Save</button>
+        </div>
+      </div>
+      <div class="col-12 row d-flex flex-column time-block">
+        <!---Time Blocks-->
+        <div class="col col-1">
+           <h3 class="hour justify-content-end"></h3>10am
+          </div>
+        <div class="col col-md-8">
+          <textarea class="description">nggjghtfhfxghx</textarea>
+        </div>
+        <div class="col col-2">
+          <button class="saveBtn p-3">Save</button>
+        </div>
+      </div>
+      <div class="col-12 row d-flex flex-column time-block">
+        <!---Time Blocks-->
+        <div class="col col-1">
+           <h3 class="hour"></h3>11am
+          </div>
+        <div class="col col-md-8 justify-content-start">
+          <textarea class="description">nggjghtfhfxghx</textarea>
+        </div>
+        <div class="col col-2">
+          <button class="saveBtn p-3">Save</button>
+        </div>
+      </div>
+      <div class="col-12 row d-flex flex-column time-block">
+        <!---Time Blocks-->
+        <div class="col col-1 time-block">
+           <h3 class="hour"></h3>12am
+          </div>
+        <div class="col col-md-8 justify-content-start">
+          <textarea class="description">nggjghtfhfxghx</textarea>
+        </div>
+        <div class="col col-2">
+          <button class="saveBtn p-3 justify-content-end">Save</button>
+        </div>
+      </div>
+      <div class="col-12 row d-flex flex-column time-block">
+        <!---Time Blocks-->
+        <div class="col col-1 time-block">
+           <h3 class="hour"></h3>1pm
+          </div>
+        <div class="col col-md-8 justify-content-start">
+          <textarea class="description">nggjghtfhfxghx</textarea>
+        </div>
+        <div class="col col-2">
+          <button class="saveBtn p-3">Save</button>
+        </div>
+      </div>
+    </main>
+      
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
