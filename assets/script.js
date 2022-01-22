@@ -10,9 +10,13 @@ currentDayEl.textContent = today.format("MMM DD, YYYY");
 // WHEN I click into a time block
 // THEN I can enter an event
 // WHEN I click the save button for that time block
-var appointment = {};
-table.onclick = function(event) {
-  let td = event.target.closest('textarea'); 
+
+$(".description").on("click", "textarea", function() {
+  console.log("text was clicked");
+});
+// var appointment = {};
+// table.onclick = function(event) {
+//   let  = event.target.closest('textarea'); 
 
   // if (!td) return; /
 
