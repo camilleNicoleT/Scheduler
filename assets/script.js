@@ -8,7 +8,6 @@ var today = moment();
 currentDayEl.textContent = today.format("MMM DD, YYYY - hh:mm");
 
 
-
 //Text is saved in local storage
 $(".saveBtn").click(function() {
 
@@ -16,6 +15,7 @@ $(".saveBtn").click(function() {
   var textarea = currentElm.querySelector('textarea').value;
   var apptId = currentElm.querySelector('textarea').getAttribute('id');
 localStorage.setItem(apptId, textarea);
+
 });
 
 
@@ -30,8 +30,10 @@ for(var i = 0; i < 10; i++){
   document.getElementById(apptKey).value = savedTextArea;
 }
 }
-
 loadAppointment();
+
+var timeInt = parseInt(timeEl)
+console.log(timeInt)
 
 //Time block is color-coded to indicate whether it is in the past, present, or future
 // function color() {
