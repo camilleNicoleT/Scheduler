@@ -2,7 +2,7 @@ var descriptionEl = document.querySelector(".description");
 var currentDayEl = document.querySelector("#currentDay");
 var saveButtonEl = document.querySelector("saveBtn");
 
-var timeEl= document.querySelector(".hour");
+// var timeEl= document.querySelector(".hour");
 
 var today = moment(); 
 currentDayEl.textContent = today.format("MMM DD, YYYY - H:MM");
@@ -35,30 +35,30 @@ for(var i = 0; i < 10; i++){
 loadAppointment();
 
 
-const time = document.getElementsByClassName(".hour");
+var time = document.getElementsByClassName("hour");
+console.log(time);
 let currentHour = parseInt(moment().format('H'));
 
 Array.from(time).forEach(hour => {
   let
-    hourIdString = row.id,
-    rowHour;
+    hourIdString = hour.id,
+    hourTime;
   if (hourIdString) {
     hourTime = parseInt(hourIdString);
   }
-  if (rowHour) {
+  if (hourTime) {
     // Compares row id to current hour and sets color accordingly
     if (currentHour === timeHour) {
-      setColor(descriptionEl, "present");
+      descriptionEl.addClass(".present");
     } else if ((currentHour < hourTime) && (currentHour > hourTime - 6)) {
-      setColor(descriptionEl, "future");
+      descriptionEl.addClass(".future");
     } else if ((currentHour > rowHour) && (currentHour < hourTime + 6)) {
-      setColor(descriptionEl, "past");
+      descriptionEl.addClass (".past");
     } else {
       setColor(descriptionEl, "white");
     }
   }
 });
-
 function setColor(element, color) {
   element.style.backgroundColor = color;
 }
