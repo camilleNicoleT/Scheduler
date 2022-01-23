@@ -1,95 +1,64 @@
-descriptionEl = document.querySelector(".description")
-currentDayEl = document.querySelector("#currentDay")
+var descriptionEl = document.querySelector(".description");
+var currentDayEl = document.querySelector("#currentDay");
+var saveButtonEl = document.querySelector("saveBtn");
+
+var timeEl= document.querySelector(".hour");
 
 var today = moment(); 
-currentDayEl.textContent = today.format("MMM DD, YYYY");
+currentDayEl.textContent = today.format("MMM DD, YYYY - hh:mm");
 
 
 
-/*InputFunction to so user can enter in tasks*/
-// WHEN I click into a time block
-// THEN I can enter an event
-// WHEN I click the save button for that time block
+//Text is saved in local storage
+$(".saveBtn").click(function() {
 
-$(".description").on("click", "textarea", function() {
-  console.log("text was clicked");
+  var currentElm = this.parentNode.parentNode;
+  var textarea = currentElm.querySelector('textarea').value;
+  var apptId = currentElm.querySelector('textarea').getAttribute('id');
+localStorage.setItem(apptId, textarea);
 });
-// var appointment = {};
-// table.onclick = function(event) {
-//   let  = event.target.closest('textarea'); 
-
-  // if (!td) return; /
-
-  // if (!table.contains(td)) return; /
-
-  // highlight(td); /
-};
 
 
+function loadAppointment() {
+ 
+for(var i = 0; i < 10; i++){
 
+  var apptKey = `appointment-${i}`;
+  var savedTextArea = localStorage.getItem(apptKey)
+  console.log(savedTextArea)
 
-/*SAve the information in Local storage so user can access even if they closed window
-//preventdefault 
-// THEN the text for that event is saved in local storage
-// var saveTasks = function() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-};
+  document.getElementById(apptKey).value = savedTextArea;
+}
+}
 
-$(".list-group").on("click", "p", function() {
-//put the text into a paragraph input form
-  var text = $(this)
-    .text()
-    .trim();
-    console.log(text);
-    
-    var textInput = $("<textarea>")
-    .addClass("form-control")
-    .val(text);
+loadAppointment();
+
+//Time block is color-coded to indicate whether it is in the past, present, or future
+// function color() {
+//    get time from hour element
   
-  $(this).replaceWith(textInput);
+// var timeColor = $(timeEl).find("h3").text();
+//   console.log(timeEl)
 
-/WHEN I refresh the page
-// THEN the saved events persist
-var loadTasks = function() {
-
-  tasks = JSON.parse(localStorage.getItem("tasks"));
-//change event..
-$(".list-group").on("change", "input[type='text']", function() {
-  // get current text
-  var date = $(this)
-    .val()
-    .trim();
-
-  // get the parent ul's id attribute
-  var status = $(this)
-    .closest(".list-group")
-    .attr("id")
-    .replace("list-", "");
+// if(moment().isAfter(9)){
+//   assign
 
 
-/*jquery for the color change for past/ present future/*/
-
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
-// var reminder = function(appointmentEl) {
-//     // get date from task element
-//     var date = $(appointmentEl).find("description").text().trim();
-   
-//     // convert to moment object at 5:00pm
-//     var time = moment(date, "L").set("hour", 17);
-    
-//     // remove any old classes from element
-//     $(appointmentEl).removeClass("list-group-item-warning list-group-item-danger");
+// }
+    // var time = $(".hour").find("h3").text().trim();
+       
+    // // remove any old classes from element
+    // $(timeEl).removeClass("past present future");
   
-//     // apply new class if task is near/over due date
-//     if (moment().isAfter(time)) {
-//       $(appointmentEl).addClass("list-group-item-danger");
-//     }
-//     // apply new class if appointment is near/over due date
-//     if (moment().isAfter(time)) {
-//       $(appointmentEl).addClass("list-group-item-danger");
-//     } 
-//     else if (Math.abs(moment().diff(time, "days")) <= 2) {
-//       $(appointmentEl).addClass("list-group-item-warning");
-//     }
-//   };
+    // // apply new class if task is near/over due date
+    // if (moment().isAfter(time)) {
+    //   $(descriptionEl).addClass("past");
+    // }
+    // // apply new class if appointment is near/over due date
+    // if (moment().isBefore(time)) {
+    //   $(descriptionEl).addClass("future");
+    // } 
+    // else if (Math.abs(moment().diff(time, "hour")) <= 1) {
+    //   $(appointmentEl).addClass("present");
+    // }
+  

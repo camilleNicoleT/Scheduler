@@ -28,70 +28,46 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <main class = "container p-1 justify-content-b">
-      <div class="col-12 row d-flex flex-column time-block  justify-content-around">
-        <!---Time Blocks-->
+    <main class = "container p-1 vh-100">
+      <!---Time Blocks-->
+      <div class="col-12 row d-flex flex-column time-block" >
         <div class="col col-1 m-0">
-           <h3 class="hour"></h3>9am
+           <h3 class="hour m-0 p-1"></h3>9:00am
           </div>
-        <div class="col col-md-8">
-          <textarea class="description" placeholder="Click here to enter your appointment."></textarea>
+        <div class="col col-8 description">
+          <textarea class="text-start" rows="2" id="appointment-0" type="text" placeholder="Click here to enter your appointment."></textarea>
         </div>
         <div class="col col-2">
           <button class="saveBtn p-3">Save</button>
         </div>
       </div>
-      <div class="col-12 row d-flex flex-column time-block">
-        <!---Time Blocks-->
+     <!---Time Blocks-->
+        <div class="col-12 row d-flex flex-column time-block">
         <div class="col col-1">
-           <h3 class="hour justify-content-end"></h3>10am
+           <h3 class="hour text-end"></h3>10am
           </div>
-        <div class="col col-md-8">
-          <textarea class="description" placeholder="Click here to enter your appointment."></textarea>
+        <div class="col col-md-8 description">
+          <textarea class="text-start" rows="2" id="appointment-2" type="text"  placeholder="Click here to enter your appointment."></textarea>
         </div>
         <div class="col col-2">
           <button class="saveBtn p-3">Save</button>
         </div>
       </div>
+      <!---Time Blocks-->
       <div class="col-12 row d-flex flex-column time-block">
-        <!---Time Blocks-->
         <div class="col col-1">
            <h3 class="hour"></h3>11am
           </div>
         <div class="col col-md-8 justify-content-start">
-          <textarea class="description" placeholder="Click here to enter your appointment."></textarea>
+          <textarea class="description" rows="2" id="appointment-3" type="text"  placeholder="Click here to enter your appointment."></textarea>
         </div>
         <div class="col col-2">
           <button class="saveBtn p-3 justify-content-end">Save</button>
-        </div>
-      </div>
-      <div class="col-12 row d-flex flex-column time-block">
-        <!---Time Blocks-->
-        <div class="col col-1 time-block">
-           <h3 class="hour justify-content-end"></h3>12pm
-          </div>
-        <div class="col col-md-8 justify-content-start">
-          <textarea class="description" placeholder="Click here to enter your appointment."></textarea>
-        </div>
-        <div class="col col-2">
-          <button class="saveBtn p-3 justify-content-end">Save</button>
-        </div>
-      </div>
-      <div class="col-12 row d-flex flex-column time-block">
-        <!---Time Blocks-->
-        <div class="col col-1 time-block">
-           <h3 class="hour"></h3>1pm
-          </div>
-        <div class="col col-md-8 justify-content-start">
-          <textarea class="description" placeholder="Click here to enter your appointment."></textarea>
-        </div>
-        <div class="col col-2">
-          <button class="saveBtn p-3">Save</button>
         </div>
       </div>
     </main>
       
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
