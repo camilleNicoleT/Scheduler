@@ -35,7 +35,7 @@ for(var i = 0; i < 10; i++){
 loadAppointment();
 
 
-var time = document.getElementsByClassName("hour");
+var time = document.getElementsByClassName(".hour");
 console.log(time);
 let currentHour = parseInt(moment().format('H'));
 
@@ -48,12 +48,12 @@ Array.from(time).forEach(hour => {
   }
   if (hourTime) {
     // Compares row id to current hour and sets color accordingly
-    if (currentHour === timeHour) {
+    if (currentHour === hourTime) {
       descriptionEl.addClass(".present");
     } else if ((currentHour < hourTime) && (currentHour > hourTime - 6)) {
       descriptionEl.addClass(".future");
-    } else if ((currentHour > rowHour) && (currentHour < hourTime + 6)) {
-      descriptionEl.addClass (".past");
+    } else if ((currentHour > hourTime) && (currentHour < hourTime + 6)) {
+      descriptionEl.addClass(".past");
     } else {
       setColor(descriptionEl, "white");
     }
