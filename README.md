@@ -1,8 +1,9 @@
 # Work Day Scheduler Starter Code
 See the live URL here: https://camillenicolet.github.io/Scheduler/
 
+
 This schedule App will help you plan out your day!
-![Screen Shot 2022-01-23 at 11 07 31 PM](https://user-images.githubusercontent.com/94029792/150722003-501e0ef2-c267-4d33-8e4b-882fca7ebc93.png)
+![Screen Shot 2022-01-23 at 11 28 37 PM](https://user-images.githubusercontent.com/94029792/150722220-365c9e9d-b029-47cc-8561-2a1b22546257.png)
 
 When the event is in the past it will turn grey
 
