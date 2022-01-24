@@ -27,8 +27,7 @@ for(var i = 0; i < 10; i++){
 
   var apptKey = `appointment-${i}`;
   var savedTextArea = localStorage.getItem(apptKey);
-  console.log(savedTextArea)
-  console.log(apptKey);
+  console.log(savedTextArea);
 
 //  $("#"+ apptKey).val() = savedTextArea;
   document.getElementById(apptKey).value = savedTextArea;
